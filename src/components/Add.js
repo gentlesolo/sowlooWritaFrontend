@@ -37,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
             height: "40vh",
         },
     },
+    list: {
+        paddingBottom: theme.spacing(20),
+    },
 }));
 function Add() {
     const classes = useStyles();
@@ -50,7 +53,7 @@ function Add() {
             </Tooltip>
             <Modal open={open}>
                 <Container className={classes.container}>
-                    <List>
+                    <List className={classes.list}>
                         <ListItem disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>
