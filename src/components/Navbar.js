@@ -3,9 +3,9 @@
 import {
     AppBar,
     Avatar,
-    Badge, Drawer,
+    Badge, Box, Drawer,
     IconButton,
-    InputBase,
+    InputBase, Link,
     List,
     ListItem, ListItemIcon, ListItemText,
     makeStyles,
@@ -29,14 +29,25 @@ import React, {useState} from "react";
 import MobileMenu from "./drawer/MobileMenu";
 import MenuIcon from '@mui/icons-material/Menu';
 import {NavLink} from "react-router-dom";
+import img from "./assets/Writa-logo.png";
 
 const useStyles = makeStyles((theme) => ({
     toolbar: {
         display: "flex",
+        backgroundColor: "white",
         // justifyContent: "space-between"
+    },
+    image: {
+        width: "20%",
+        paddingLeft: theme.spacing(12),
+        [theme.breakpoints.down("sm")]:{
+            //display: (props)=> (props.open ? "flex" : "none"),
+            width: "52%",
+        },
     },
     search: {
         display: "flex",
+        visibility: "hidden",
         alignItems: "center",
         backgroundColor: alpha(theme.palette.common.white, 0.15),
         '&:hover': {
@@ -74,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
         '&.active': {
             textDecoration: "none",
             // backgroundColor: "#e5e5e5",
-            backgroundColor: "#aab5f3",
+            backgroundColor: "#ffdfff",
             color: "black"
         }
     },
@@ -134,22 +145,32 @@ const Navbar = () => {
             <AppBar position="fixed">
                 <Toolbar className={classes.toolbar}>
 
-                    <Typography variant="h6" className={classes.logoLarge}>
-                        Sowloo Writa
-                    </Typography>
+                    {/*<Typography variant="h6" className={classes.logoLarge}>*/}
+                    {/*    Sowloo Writa*/}
+                    {/*</Typography>*/}
+
                     <IconButton className={classes.logoSmall}
                                 size="large"
                                 edge="start"
-                                color="inherit"
+                                color="black"
                                 aria-label="menu"
                                 sx={{ mr: 2 }}
                                 onClick={() => setOpenDrawer(true)}
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" className={classes.logoSmall}>
-                        Writa
-                    </Typography>
+
+                    <Link href="/">
+                        <Box component="img" src={img} className={[classes.image, classes.logoLarge].join(' ')} />
+                    </Link>
+
+
+                    {/*<Typography variant="h6" className={classes.logoSmall}>*/}
+                    {/*    Writa*/}
+                    {/*</Typography>*/}
+                    <Link href="/">
+                        <Box component="img" src={img} className={[classes.image, classes.logoSmall].join(' ')} />
+                    </Link>
                     <div className={classes.search}>
                         <Search/>
                         <InputBase placeholder="search...." className={classes.input}/>

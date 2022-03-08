@@ -10,21 +10,15 @@ import {
     makeStyles, MenuItem, Select,
     Typography
 } from "@material-ui/core";
-// import ListHeadlines from "./headline/ListHeadlines";
+// import ListBlogposts from "./blogpost/ListBlogposts";
 import {Stack} from "@mui/material";
 import {useEffect, useState} from "react";
-import HeadlineService from "./HeadlineService";
+import BlogpostService from "./BlogpostService";
 // import {Home} from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
     container: {
         paddingTop: theme.spacing(5),
-        alignItems: "center",
-        // backgroundColor: "#fff7ff",
-    },
-    box: {
-        width: "100%",
-        paddingBottom: 20,
         alignItems: "center"
     },
     stackrow: {
@@ -32,22 +26,17 @@ const useStyles = makeStyles((theme) => ({
     },
     post: {
         outline: "0 solid transparent",
-        fontFamily: "Sora",
-    },
-    button: {
-        color: "#cb04cb",
-        fontSize: 11,
-    },
+    }
 }));
-function HeadlineFeed() {
+function BlogpostFeed() {
     const classes = useStyles();
 
-    const [headlines, setHeadlines] = useState([]);
+    const [blogposts, setBlogposts] = useState([]);
 
     useEffect(() => {
 
-        HeadlineService.getAllHeadlines().then((response) => {
-            setHeadlines(response.data)
+        BlogpostService.getAllBlogposts().then((response) => {
+            setBlogposts(response.data)
             console.log(response.data);
         }).catch(error => {
             console.log(error);
@@ -56,9 +45,9 @@ function HeadlineFeed() {
 
     return (
         <Container className={classes.container}>
-            <Box className={classes.box} justify="flex-end" sx={{  }}>
+            <Box justify="flex-end" sx={{ width: "80%", paddingBottom: 20, alignItems: "center" }}>
                 <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">Filter by Industry</InputLabel>
+                    <InputLabel id="demo-simple-select-label">Select Industry</InputLabel>
                     <Select
                         variant="outlined"
                         labelId="demo-simple-select-label"
@@ -75,7 +64,7 @@ function HeadlineFeed() {
             </Box>
             <Grid container spacing={2} className={classes.stackrow}>
 
-                { headlines.map(item => (
+                { blogposts.map(item => (
                     <Grid item xs={6} md={3} key={item.id}>
 
                         <Card className={classes.card}>
@@ -90,8 +79,6 @@ function HeadlineFeed() {
                                     <Button size="small" color="primary" className={classes.button}>{item.industry}</Button>
                                 </CardActions>
                         </Card>
-
-
                     </Grid>
                 ))
             }
@@ -101,4 +88,4 @@ function HeadlineFeed() {
     );
 }
 
-export default HeadlineFeed;
+export default BlogpostFeed;

@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'fixed',
         bottom: 10,
         right: 20,
+        backgroundColor: "#ff00ff",
     },
     container: {
         width: 500,

@@ -4,6 +4,8 @@ import Feed from "../home/Feed";
 import Rightbar from "../Rightbar";
 import Add from "../Add";
 import Footer from "../Footer";
+import SocialmediaFeed from "./SocialmediaFeed";
+import {Alert, AlertTitle} from "@mui/material";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,25 +22,24 @@ const Socialmedia = () =>{
 
         // <Router>
         <div>
-
             <Grid container>
-
-
-                <Grid item sm={2} xs={2}>
+                <Grid item sm={2} xs={0}>
                     <Leftbar/>
                 </Grid>
-                <Grid item sm={7} xs={10}>
-                    {/*<register/>*/}
-                    <Feed/>
-
+                <Grid item sm={7} xs={12} sx={{backgroundColor: "#fbfeff"}}>
+                    <Alert severity="info" sx={{mt: "80px"}}>
+                        <AlertTitle>Tips</AlertTitle>
+                        <strong>Select</strong> — <strong>Edit</strong> — <strong>Copy</strong>
+                    </Alert>
+                    <SocialmediaFeed/>
                 </Grid>
-                <Grid item sm={3} className={classes.right}>
-                    <Rightbar/>
+                <Grid item sm={3} xs={0} className={classes.right}>
+                    {/*<Rightbar/>*/}
                 </Grid>
             </Grid>
 
-            <Add/>
-            <Footer/>
+            {/*<Add/>*/}
+            {/*<Footer/>*/}
         </div>
 
 

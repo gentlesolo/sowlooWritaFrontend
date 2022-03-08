@@ -16,7 +16,7 @@ import {
     Typography
 } from "@material-ui/core";
 import {Visibility, VisibilityOff} from "@mui/icons-material";
-import HeadlineService from "../headline/HeadlineService";
+import BlogpostService from "../blogpost/BlogpostService";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(4),
     },
 }));
-function AddHeadlineService() {
+function AddBlogpostService() {
     const classes = useStyles();
 
 
@@ -64,34 +64,34 @@ function AddHeadlineService() {
 
     const navigate = useNavigate();
 
-    const [headlines, setHeadline] = useState([]);
+    const [blogposts, setBlogpost] = useState([]);
 
     const handleRegister=(e)=> {
         e.preventDefault();
-        const headline = {name, description, industry, price}
-        console.log(headline)
-        HeadlineService.createHeadline(headline).then((response) => {
+        const blogpost = {name, description, industry, price}
+        console.log(blogpost)
+        BlogpostService.createBlogpost(blogpost).then((response) => {
             console.log(response.data)
-            navigate.push('/headline')
+            navigate.push('/blogpost')
         }).catch((error) => {
             console.log(error)
         })
     }
-    //     fetch("http://localhost:8082/api/headline/",{
+    //     fetch("http://localhost:8082/api/blogpost/",{
     //         method:"POST",
     //         headers:{"Content-Type": "application/json"},
-    //         body: JSON.stringify(headline)
+    //         body: JSON.stringify(blogpost)
     //
     //     }).then(()=>{
-    //         console.log("new headline added")
+    //         console.log("new blogpost added")
     //     })
     // }
     //
     // useEffect(()=>{
-    //     fetch("http://localhost:8082/api/headline/save")
+    //     fetch("http://localhost:8082/api/blogpost/save")
     //         .then(res=>res.json())
     //         .then((result)=>{
-    //                 setHeadline(result);
+    //                 setBlogpost(result);
     //             }
     //         )
     // },[])
@@ -103,7 +103,7 @@ function AddHeadlineService() {
 
                 <form className={classes.form} autoComplete="off">
                     <Typography variant="h5" component="h6" className={classes.head}>
-                        Add New Headline
+                        Add New Blogpost
                     </Typography>
                     <div className={classes.item}>
                         <TextField id="outlined-size-normal"
@@ -155,7 +155,7 @@ function AddHeadlineService() {
                             style={{marginRight: 20}}
                             fullWidth
                         >
-                            Create Headline
+                            Create Blogpost
                         </Button>
                     </div>
                 </form>
@@ -165,4 +165,4 @@ function AddHeadlineService() {
     );
 }
 
-export default AddHeadlineService;
+export default AddBlogpostService;

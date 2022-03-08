@@ -23,7 +23,7 @@ const Landing = () =>{
                 {/*<Grid item sm={2} xs={0}>*/}
                 {/*    <Leftbar/>*/}
                 {/*</Grid>*/}
-                <Grid item sm={12} xs={12} sx={{backgroundColor: "#fbfeff"}}>
+                <Grid item sm={12} xs={12} sx={{backgroundColor: "#fff7ff"}}>
                     <Banner/>
                 </Grid>
                 {/*<Grid item sm={3} xs={0} className={classes.right}>*/}

@@ -9,11 +9,12 @@ const useStyles = makeStyles((theme) => ({
         height: "100vh",
         color: "white",
         paddingTop: theme.spacing(10),
+        backgroundColor: "#fff8ff",
         // backgroundColor: theme.palette.primary.main,
         position: "sticky",
         top: 0,
         [theme.breakpoints.up("sm")]:{
-            backgroundColor: "white",
+            backgroundColor: "#fff7ff",
             color: "#555",
             border: "1px solid #ece7e7",
         },
@@ -49,7 +50,8 @@ const useStyles = makeStyles((theme) => ({
 
     headtext: {
         textAlign: "left",
-        fontWeight: "bolder",
+        fontWeight: "700",
+        fontFamily: "Ubuntu",
         color: "#202020",
         [theme.breakpoints.down("sm")]:{
             fontSize: "40px",
@@ -62,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
         width: "70%",
         marginBottom: theme.spacing(3),
         fontSize: "20px",
+        fontFamily: "Sora",
         [theme.breakpoints.down("sm")]:{
             fontSize: "17px",
             textAlign: "center",
@@ -72,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
     },
     btn: {
         borderRadius: "5px",
-        backgroundColor: "#f50057",
+        backgroundColor: "#ff00ff",
         color: "white",
         width: "30%",
         height: "8%",

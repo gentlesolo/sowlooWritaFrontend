@@ -4,7 +4,7 @@ import Feed from "../home/Feed";
 import Rightbar from "../Rightbar";
 import Add from "../Add";
 import Footer from "../Footer";
-import HeadlineFeed from "./HeadlineFeed";
+import BlogpostFeed from "./BlogpostFeed";
 import {Alert, AlertTitle} from "@mui/material";
 
 
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Headline = () =>{
+const Blogpost = () =>{
     const classes = useStyles();
     return (
 
@@ -26,12 +26,12 @@ const Headline = () =>{
                 <Grid item sm={2} xs={0}>
                     <Leftbar/>
                 </Grid>
-                <Grid item sm={7} xs={12} sx={{backgroundColor: "#fff7ff"}}>
+                <Grid item sm={7} xs={12} sx={{backgroundColor: "#fbfeff"}}>
                     <Alert severity="info" sx={{mt: "80px"}}>
                         <AlertTitle>Tips</AlertTitle>
                         <strong>Select</strong> — <strong>Edit</strong> — <strong>Copy</strong>
                     </Alert>
-                    <HeadlineFeed/>
+                    <BlogpostFeed/>
                 </Grid>
                 <Grid item sm={3} xs={0} className={classes.right}>
                     {/*<Rightbar/>*/}
@@ -46,4 +46,4 @@ const Headline = () =>{
     );
 }
 
-export default Headline;
+export default Blogpost;

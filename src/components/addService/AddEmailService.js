@@ -16,7 +16,7 @@ import {
     Typography
 } from "@material-ui/core";
 import {Visibility, VisibilityOff} from "@mui/icons-material";
-import HeadlineService from "../headline/HeadlineService";
+import EmailService from "../emailcampaign/EmailService";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(4),
     },
 }));
-function AddHeadlineService() {
+function AddEmailService() {
     const classes = useStyles();
 
 
@@ -64,34 +64,34 @@ function AddHeadlineService() {
 
     const navigate = useNavigate();
 
-    const [headlines, setHeadline] = useState([]);
+    const [emails, setEmail] = useState([]);
 
     const handleRegister=(e)=> {
         e.preventDefault();
-        const headline = {name, description, industry, price}
-        console.log(headline)
-        HeadlineService.createHeadline(headline).then((response) => {
+        const email = {name, description, industry, price}
+        console.log(email)
+        EmailService.createEmail(email).then((response) => {
             console.log(response.data)
-            navigate.push('/headline')
+            navigate.push('/email')
         }).catch((error) => {
             console.log(error)
         })
     }
-    //     fetch("http://localhost:8082/api/headline/",{
+    //     fetch("http://localhost:8082/api/email/",{
     //         method:"POST",
     //         headers:{"Content-Type": "application/json"},
-    //         body: JSON.stringify(headline)
+    //         body: JSON.stringify(email)
     //
     //     }).then(()=>{
-    //         console.log("new headline added")
+    //         console.log("new email added")
     //     })
     // }
     //
     // useEffect(()=>{
-    //     fetch("http://localhost:8082/api/headline/save")
+    //     fetch("http://localhost:8082/api/email/save")
     //         .then(res=>res.json())
     //         .then((result)=>{
-    //                 setHeadline(result);
+    //                 setEmail(result);
     //             }
     //         )
     // },[])
@@ -103,7 +103,7 @@ function AddHeadlineService() {
 
                 <form className={classes.form} autoComplete="off">
                     <Typography variant="h5" component="h6" className={classes.head}>
-                        Add New Headline
+                        Add New Email
                     </Typography>
                     <div className={classes.item}>
                         <TextField id="outlined-size-normal"
@@ -155,7 +155,7 @@ function AddHeadlineService() {
                             style={{marginRight: 20}}
                             fullWidth
                         >
-                            Create Headline
+                            Create Email
                         </Button>
                     </div>
                 </form>
@@ -165,4 +165,4 @@ function AddHeadlineService() {
     );
 }
 
-export default AddHeadlineService;
+export default AddEmailService;

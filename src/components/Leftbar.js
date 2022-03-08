@@ -46,9 +46,13 @@ const useStyles = makeStyles((theme) => ({
             visibility: "hidden",
         },
     },
+    ListItemText: {
+        fontFamily: "Sora",
+    },
     listItem: {
         textDecoration: "none",
         color: "#727272",
+        fontFamily: "Sora",
         '&:hover': {
             textDecoration: "none",
             // backgroundColor: "#e5e5e5",
@@ -64,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
         '&.active': {
             textDecoration: "none",
             // backgroundColor: "#e5e5e5",
-            backgroundColor: "#aab5f3",
+            backgroundColor: "#ffe0ff",
             color: "black"
         }
     },
@@ -88,6 +92,7 @@ const useStyles = makeStyles((theme) => ({
     text:{
         fontWeight: 500,
         fontSize: "13px",
+        fontFamily: "Sora",
         [theme.breakpoints.down("sm")]:{
             display:"none",
         },
@@ -114,10 +119,10 @@ function Leftbar() {
                             <ListItemIcon>
                                 <ViewHeadlineSharp className={classes.icon}/>
                             </ListItemIcon>
-                            <ListItemText primary="Headline" />
+                            <ListItemText className={classes.text} primary="Headline" />
                         </ListItemButton>
                     </ListItem>
-                    <ListItem  component={NavLink} to="/social-media" className={classes.listItem}>
+                    <ListItem  component={NavLink} to="/socialmedia" className={classes.listItem}>
                         <ListItemButton>
                             <ListItemIcon>
                                 <FacebookSharp className={classes.icon}/>
@@ -125,7 +130,7 @@ function Leftbar() {
                             <ListItemText primary="Social Media" />
                         </ListItemButton>
                     </ListItem>
-                    <ListItem  component={NavLink} to="/email" className={classes.listItem}>
+                    <ListItem  component={NavLink} to="/emailcampaign" className={classes.listItem}>
                         <ListItemButton>
                             <ListItemIcon>
                                 <Email className={classes.icon}/>
@@ -133,7 +138,7 @@ function Leftbar() {
                             <ListItemText primary="Email" />
                         </ListItemButton>
                     </ListItem>
-                    <ListItem  component={NavLink} to="/blog-post" className={classes.listItem}>
+                    <ListItem  component={NavLink} to="/blogpost" className={classes.listItem}>
                         <ListItemButton>
                             <ListItemIcon>
                                 <Article className={classes.icon}/>

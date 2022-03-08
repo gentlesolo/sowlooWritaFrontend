@@ -38,7 +38,7 @@ const MobileMenu = () => {
                             <ListItemIcon>
                                 <ViewHeadlineSharp className={classes.icon}/>
                             </ListItemIcon>
-                            <ListItemText primary="Headline" />
+                            <ListItemText primary="Email" />
                         </ListItemButton>
                     </ListItem>
                     <ListItem  component={NavLink} to="/social-media" className={classes.listItem}>
