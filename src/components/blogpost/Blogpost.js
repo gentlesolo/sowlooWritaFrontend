@@ -1,4 +1,4 @@
-import {Grid, makeStyles} from "@material-ui/core";
+import {Grid, makeStyles, Typography} from "@material-ui/core";
 import Leftbar from "../Leftbar";
 import Feed from "../home/Feed";
 import Rightbar from "../Rightbar";
@@ -31,7 +31,8 @@ const Blogpost = () =>{
                         <AlertTitle>Tips</AlertTitle>
                         <strong>Select</strong> — <strong>Edit</strong> — <strong>Copy</strong>
                     </Alert>
-                    <BlogpostFeed/>
+                    {/*<BlogpostFeed/>*/}
+                    <Typography variant="h3">COMMING SOON</Typography>
                 </Grid>
                 <Grid item sm={3} xs={0} className={classes.right}>
                     {/*<Rightbar/>*/}

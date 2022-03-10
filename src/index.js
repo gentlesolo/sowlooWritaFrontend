@@ -4,14 +4,42 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom'
+import Analytics from 'analytics';
+import googleAnalytics from '@analytics/google-analytics';
+import {AnalyticsProvider} from "use-analytics";
 import {CssBaseline} from "@material-ui/core";
+
+
+const myPlugin = {
+    name: 'my-custom-plugin',
+    page: ({ payload }) => {
+        console.log('page view fired', payload)
+    },
+    track: ({payload}) => {
+        console.log('track event payload', payload)
+    }
+}
+
+const analytics = Analytics({
+    app: 'writa',
+    plugins: [
+        myPlugin,
+        googleAnalytics({
+            trackingId: 'G-J2FCW6C1CX'
+        })
+    ]
+})
+// console.log('analytics', analytics)
 
 ReactDOM.render(
   <React.StrictMode>
-      <BrowserRouter>
-          <CssBaseline/>
-          <App />
-      </BrowserRouter>
+      <AnalyticsProvider instance={analytics}>
+          <BrowserRouter>
+              <CssBaseline/>
+              <App />
+          </BrowserRouter>
+      </AnalyticsProvider>
+
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,9 +1,10 @@
 import './App.css';
+import React, {useEffect} from "react";
 // import { makeStyles } from '@mui/styles';
 import Navbar from "./components/Navbar";
 import Add from "./components/Add";
 import Footer from "./components/Footer";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useLocation} from "react-router-dom";
 import Home from "./components/home/Home";
 import Landing from "./components/landing/Landing";
 import Login from "./components/user-registration/Login";
@@ -15,16 +16,32 @@ import Register from "./components/user-registration/Register";
 import {Alert, AlertTitle} from "@mui/material";
 import Email from "./components/emailcampaign/Email";
 import Blogpost from "./components/blogpost/Blogpost";
+import { useAnalytics } from "use-analytics";
+import {Link} from "@material-ui/core";
+
 // import Authen from "./components/register";
 //import {Route} from "@mui/icons-material";
 
 
 function App() {
+    let location = useLocation()
+    const analytics = useAnalytics()
+
+    useEffect(() => {
+        // console.log('send page view')
+        analytics.page()
+    }, [location]);
+
+
     // const classes = useStyles();
   return (
 
       <div>
           <Navbar />
+          <nav>
+              <Link to="/">HOME</Link>
+              <Link to="/headline">HEADLINE</Link>
+          </nav>
 
           <Routes>
               <Route path="/" element={<Landing/>}/>

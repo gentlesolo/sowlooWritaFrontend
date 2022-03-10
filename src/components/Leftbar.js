@@ -146,6 +146,14 @@ function Leftbar() {
                             <ListItemText primary="Blog Post" />
                         </ListItemButton>
                     </ListItem>
+                    <ListItem  component={NavLink} to="/salesfunnel" className={classes.listItem}>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <Article className={classes.icon}/>
+                            </ListItemIcon>
+                            <ListItemText primary="Sales Funnel" />
+                        </ListItemButton>
+                    </ListItem>
                     <ListItem  component={NavLink} to="/paid-advert" className={classes.listItem}>
                         <ListItemButton>
                             <ListItemIcon>
