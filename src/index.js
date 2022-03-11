@@ -1,4 +1,5 @@
 import React from 'react';
+import { Component } from "react";
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -8,6 +9,7 @@ import Analytics from 'analytics';
 import googleAnalytics from '@analytics/google-analytics';
 import {AnalyticsProvider} from "use-analytics";
 import {CssBaseline} from "@material-ui/core";
+import ReactGA from 'react-ga';
 
 
 const myPlugin = {
@@ -25,22 +27,30 @@ const analytics = Analytics({
     plugins: [
         myPlugin,
         googleAnalytics({
-            trackingId: 'G-J2FCW6C1CX'
+            trackingId: 'UA-222078699-1'
         })
     ]
 })
-// console.log('analytics', analytics)
+//console.log('analytics', analytics)
+
+const setGA = () => {
+    ReactGA.initialize('G-J2FCW6C1CX');
+    ReactGA.pageview('Init page view');
+};
+// componentDidMount(){
+//     this.setGA();
+// }
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
       <AnalyticsProvider instance={analytics}>
           <BrowserRouter>
               <CssBaseline/>
               <App />
           </BrowserRouter>
-      </AnalyticsProvider>
+      </AnalyticsProvider>,
 
-  </React.StrictMode>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 

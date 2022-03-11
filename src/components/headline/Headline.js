@@ -6,6 +6,8 @@ import Add from "../Add";
 import Footer from "../Footer";
 import HeadlineFeed from "./HeadlineFeed";
 import {Alert, AlertTitle} from "@mui/material";
+import React from "react";
+
 
 
 const useStyles = makeStyles((theme) => ({

@@ -18,6 +18,7 @@ import Email from "./components/emailcampaign/Email";
 import Blogpost from "./components/blogpost/Blogpost";
 import { useAnalytics } from "use-analytics";
 import {Link} from "@material-ui/core";
+import LoginNew from "./components/user-registration/LoginNew";
 
 // import Authen from "./components/register";
 //import {Route} from "@mui/icons-material";
@@ -43,11 +44,12 @@ function App() {
               <Link to="/headline">HEADLINE</Link>
           </nav>
 
+
           <Routes>
               <Route path="/" element={<Landing/>}/>
               <Route path="/home" element={<Home/>}/>
               <Route path="/headline" element={<Headline/>}/>
-              <Route path="/login" element={<Login/>}/>
+              <Route path="/login" element={<LoginNew/>}/>
               <Route path="/register" element={<Register/>}/>
               <Route path="/socialmedia" element={<Socialmedia/>}/>
               <Route path="/blogpost" element={<Blogpost/>}/>
