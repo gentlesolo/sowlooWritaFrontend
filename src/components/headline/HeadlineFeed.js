@@ -56,10 +56,10 @@ function HeadlineFeed() {
         })
     }, [])
 
-    useEffect(() => {
-        setFilteredData(headlines.filter((headline) => headline.industry?.toLowerCase().includes(search?.toLowerCase()))
-        )
-    }, [search, headlines]);
+    // useEffect(() => {
+    //     setFilteredData(headlines.filter((headline) => headline.industry?.toLowerCase().includes(search?.toLowerCase()))
+    //     )
+    // }, [search, headlines]);
 
 
     return (
@@ -72,21 +72,19 @@ function HeadlineFeed() {
                         variant="outlined"
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={""}
+                        // value={""}
                         label="industry"
-                        onChange={(e) => {
-                            setSearch(e.target.value)
-                        }}
+
                     >
                         <MenuItem value="">None</MenuItem>
-                        {
-                            // filteredData.length === 0 ? <div>No result found</div> :
-                            headlines.map(item =>
-                                (
-                                    <MenuItem key={item.id} value={item.industry}>{item.industry}</MenuItem>
+                        {/*{*/}
+                        {/*    // filteredData.length === 0 ? <div>No result found</div> :*/}
+                        {/*    headlines.map(item =>*/}
+                        {/*        (*/}
+                        {/*            <MenuItem key={item.id} value={item.industry}>{item.industry}</MenuItem>*/}
 
-                                ))
-                        }
+                        {/*        ))*/}
+                        {/*}*/}
 
                     </Select>
                 </FormControl>
