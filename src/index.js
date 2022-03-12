@@ -30,7 +30,7 @@ const analytics = Analytics({
         })
     ]
 })
-console.log('analytics', analytics)
+// console.log('analytics', analytics)
 
 
 

@@ -92,8 +92,9 @@ function HeadlineFeed() {
             </Box>
             <Grid container spacing={2} className={classes.stackrow}>
 
-                { filteredData.length === 0 ? <div>No result found</div> :
-                    filteredData.map(item =>
+                {/*{ filteredData.length === 0 ? <div>No result found</div> :*/}
+                {
+                    headlines.map(item =>
                         (
                             <Grid item xs={6} md={3} key={item.id}>
 
