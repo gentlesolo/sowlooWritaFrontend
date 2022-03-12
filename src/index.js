@@ -16,9 +16,9 @@ const myPlugin = {
     page: ({ payload }) => {
         console.log('page view fired', payload)
     },
-    track: ({payload}) => {
-        console.log('track event payload', payload)
-    }
+    // track: ({payload}) => {
+    //     console.log('track event payload', payload)
+    // }
 }
 
 const analytics = Analytics({
@@ -35,15 +35,15 @@ const analytics = Analytics({
 
 
 ReactDOM.render(
-  // <React.StrictMode>
+  <React.StrictMode>
       <AnalyticsProvider instance={analytics}>
           <BrowserRouter>
               <CssBaseline/>
               <App />
           </BrowserRouter>
-      </AnalyticsProvider>,
+      </AnalyticsProvider>
 
-  // </React.StrictMode>,
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
