@@ -79,8 +79,9 @@ function HeadlineFeed() {
                         }}
                     >
                         <MenuItem value="">None</MenuItem>
-                        { filteredData.length === 0 ? <div>No result found</div> :
-                            filteredData.map(item =>
+                        {
+                            // filteredData.length === 0 ? <div>No result found</div> :
+                            headlines.map(item =>
                                 (
                                     <MenuItem key={item.id} value={item.industry}>{item.industry}</MenuItem>
 
