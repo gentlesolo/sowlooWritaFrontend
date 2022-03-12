@@ -7,11 +7,10 @@ import {
     CardActions,
     CardContent,
     Container, FormControl, Grid, InputLabel,
-    makeStyles, MenuItem, Select, TextField,
+    makeStyles, MenuItem, Select,
     Typography
 } from "@material-ui/core";
 // import ListHeadlines from "./headline/ListHeadlines";
-import {Stack} from "@mui/material";
 import {useEffect, useState} from "react";
 import HeadlineService from "./HeadlineService";
 import * as React from "react";
@@ -38,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
     button: {
         color: "#cb04cb",
         fontSize: 11,
+        size: 'small',
     },
 }));
 function HeadlineFeed() {
@@ -57,8 +57,7 @@ function HeadlineFeed() {
     }, [])
 
     useEffect(() => {
-        setFilteredData(
-            headlines.filter((headline) => headline.industry?.toLowerCase().includes(search?.toLowerCase()))
+        setFilteredData(headlines.filter((headline) => headline.industry?.toLowerCase().includes(search?.toLowerCase()))
         )
     }, [search, headlines]);
 
@@ -107,7 +106,7 @@ function HeadlineFeed() {
                                         </CardContent>
                                     </CardActionArea>
                                         <CardActions>
-                                            <Button size="small" color="primary" className={classes.button}>{item.industry}</Button>
+                                            <Button className={classes.button}>{item.industry}</Button>
                                         </CardActions>
                                 </Card>
                             </Grid>
