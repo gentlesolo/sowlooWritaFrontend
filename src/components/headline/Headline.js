@@ -1,9 +1,9 @@
 import {Grid, makeStyles} from "@material-ui/core";
 import Leftbar from "../Leftbar";
-import Feed from "../home/Feed";
-import Rightbar from "../Rightbar";
-import Add from "../Add";
-import Footer from "../Footer";
+// import Feed from "../home/Feed";
+// import Rightbar from "../Rightbar";
+// import Add from "../Add";
+// import Footer from "../Footer";
 import HeadlineFeed from "./HeadlineFeed";
 import {Alert, AlertTitle} from "@mui/material";
 import React from "react";

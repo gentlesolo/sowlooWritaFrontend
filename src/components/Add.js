@@ -5,14 +5,11 @@ import {
     List,
     ListItem, ListItemIcon, ListItemText,
     makeStyles,
-    MenuItem,
     Modal,
-    TextField,
     Tooltip
 } from "@material-ui/core";
 import EventIcon from '@mui/icons-material/Event';
-import CloseIcon from '@mui/icons-material/Close';
-import {Add as AddIcon, CampaignSharp, DeleteSharp} from "@mui/icons-material"
+import {Add as AddIcon, CampaignSharp} from "@mui/icons-material"
 import {useState} from "react";
 import {ListItemButton} from "@mui/material";
 

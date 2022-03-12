@@ -1,21 +1,16 @@
 // import { makeStyles } from '@mui/styles';
 import * as React from 'react';
-import {useHistory, useNavigate} from 'react-router-dom';
-import {useEffect, useState} from 'react';
+import { useNavigate} from 'react-router-dom';
+import { useState} from 'react';
 import {
     Button,
     Container,
-    FormControl,
-    IconButton,
-    InputAdornment,
-    InputLabel,
     makeStyles,
-    OutlinedInput,
     Paper,
     TextField,
     Typography
 } from "@material-ui/core";
-import {Visibility, VisibilityOff} from "@mui/icons-material";
+// import {Visibility, VisibilityOff} from "@mui/icons-material";
 import HeadlineService from "../headline/HeadlineService";
 
 
@@ -64,7 +59,7 @@ function AddHeadlineService() {
 
     const navigate = useNavigate();
 
-    const [headlines, setHeadline] = useState([]);
+    // const [headlines, setHeadline] = useState([]);
 
     const handleRegister=(e)=> {
         e.preventDefault();

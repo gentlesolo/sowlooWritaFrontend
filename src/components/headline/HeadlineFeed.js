@@ -44,8 +44,8 @@ function HeadlineFeed() {
     const classes = useStyles();
 
     const [headlines, setHeadlines] = useState([]);
-    const [search, setSearch] = useState("");
-    const [filteredData, setFilteredData] = useState([])
+    // const [search, setSearch] = useState("");
+    // const [filteredData, setFilteredData] = useState([])
 
     useEffect(() => {
         HeadlineService.getAllHeadlines().then((response) => {

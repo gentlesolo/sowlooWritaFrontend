@@ -5,7 +5,6 @@ import {
     CardActionArea,
     CardActions,
     CardContent,
-    CardMedia,
     makeStyles,
     Typography
 } from "@material-ui/core";
@@ -33,10 +32,10 @@ const useStyles = makeStyles((theme) => ({
 function Post() {
     const classes = useStyles();
 
-    const state = {
-        value: '',
-        copied: false,
-    };
+    // const state = {
+    //     value: '',
+    //     copied: false,
+    // };
     return (
 
         <Card className={classes.card}>

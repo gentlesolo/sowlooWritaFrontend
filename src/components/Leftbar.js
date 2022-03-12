@@ -2,13 +2,11 @@
 import {
     Container,
     Divider,
-    Link,
     List,
     ListItem,
     ListItemIcon,
     ListItemText,
     makeStyles,
-    Typography
 } from "@material-ui/core";
 import {
     AdUnitsSharp,
@@ -23,7 +21,6 @@ import {
     RadioSharp,
     TvSharp,
     ViewHeadlineSharp,
-    InboxIcon
 } from "@mui/icons-material";
 import {ListItemButton} from "@mui/material";
 import {NavLink} from "react-router-dom";

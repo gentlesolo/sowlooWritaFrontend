@@ -10,7 +10,6 @@ import {
     ListItem, ListItemIcon, ListItemText,
     makeStyles,
     Toolbar,
-    Typography
 } from "@material-ui/core";
 import {
     AdUnitsSharp,
@@ -26,7 +25,6 @@ import {
 } from "@mui/icons-material";
 import {alpha, ListItemButton} from "@mui/material";
 import React, {useState} from "react";
-import MobileMenu from "./drawer/MobileMenu";
 import MenuIcon from '@mui/icons-material/Menu';
 import {NavLink} from "react-router-dom";
 import img from "./assets/Writa-logo.png";

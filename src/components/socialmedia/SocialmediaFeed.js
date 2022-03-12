@@ -11,7 +11,7 @@ import {
     Typography
 } from "@material-ui/core";
 // import ListSocialmedias from "./socialmedia/ListSocialmedias";
-import {Stack} from "@mui/material";
+// import {Stack} from "@mui/material";
 import {useEffect, useState} from "react";
 import SocialmediaService from "./SocialmediaService";
 // import {Home} from "@mui/icons-material";
