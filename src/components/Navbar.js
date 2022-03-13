@@ -27,16 +27,16 @@ import {alpha, ListItemButton} from "@mui/material";
 import React, {useState} from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import {NavLink} from "react-router-dom";
-import img from "./assets/Writa-logo.png";
+import img from "./assets/WritaBlue_Logo.svg";
 
 const useStyles = makeStyles((theme) => ({
     toolbar: {
         display: "flex",
-        backgroundColor: "white",
+        backgroundColor: "#cbf1e7",
         // justifyContent: "space-between"
     },
     image: {
-        width: "20%",
+        width: "30%",
         paddingLeft: theme.spacing(12),
         [theme.breakpoints.down("sm")]:{
             //display: (props)=> (props.open ? "flex" : "none"),

@@ -9,12 +9,12 @@ const useStyles = makeStyles((theme) => ({
         height: "100vh",
         color: "white",
         paddingTop: theme.spacing(10),
-        backgroundColor: "#fff8ff",
+        backgroundColor: "#cbf1e7",
         // backgroundColor: theme.palette.primary.main,
         position: "sticky",
         top: 0,
         [theme.breakpoints.up("sm")]:{
-            backgroundColor: "#fff7ff",
+            backgroundColor: "#cbf1e7",
             color: "#555",
             border: "1px solid #ece7e7",
         },
@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
     },
     btn: {
         borderRadius: "5px",
-        backgroundColor: "#ff00ff",
+        backgroundColor: "#160647",
         color: "white",
         width: "30%",
         height: "8%",

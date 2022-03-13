@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Sora",
     },
     button: {
-        color: "#cb04cb",
+        color: "#160647",
         fontSize: 11,
         size: 'small',
     },
