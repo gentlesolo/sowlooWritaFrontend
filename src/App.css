@@ -31,6 +31,22 @@ body {
   color: #61dafb;
 }
 
+.page-link {
+  position: relative;
+  display: block;
+  color: #160647;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.page-item.active .page-link {
+  z-index: 3;
+  color: #160647;
+  background-color: #00f5d4;
+  border-color: #00f5d4;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -14,6 +14,8 @@ import {
 import {useEffect, useState} from "react";
 import HeadlineService from "./HeadlineService";
 import * as React from "react";
+import {Pagination, Stack} from "@mui/material";
+import ReactPaginate from "react-paginate";
 // import {Home} from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
@@ -39,28 +41,72 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 11,
         size: 'small',
     },
+    pageLinkClassName: {
+        color: "#160647",
+
+},
+
+
 }));
+
 function HeadlineFeed() {
     const classes = useStyles();
 
     const [headlines, setHeadlines] = useState([]);
-    // const [search, setSearch] = useState("");
-    // const [filteredData, setFilteredData] = useState([])
+    const [page, setPage] = useState(9);
+    const [numberofPages, setNumberOfPages] = useState(10)
 
-    useEffect(() => {
-        HeadlineService.getAllHeadlines().then((response) => {
-            setHeadlines(response.data)
-            console.log(response.data);
-        }).catch(error => {
-            console.log(error);
-        })
-    }, [])
+    // useEffect(() => {
+    //     HeadlineService.getAllHeadlines().then((response) => {
+    //         setHeadlines(response.data)
+    //         console.log(response.data);
+    //     }).catch(error => {
+    //         console.log(error);
+    //     })
+    // }, [])
 
     // useEffect(() => {
     //     setFilteredData(headlines.filter((headline) => headline.industry?.toLowerCase().includes(search?.toLowerCase()))
     //     )
     // }, [search, headlines]);
 
+    const [items, setItems] = useState([]);
+
+    const [pageCount, setpageCount] = useState([0]);
+
+    let limitsize = 24;
+
+    useEffect(() => {
+        const getHeadlines = async () =>{
+            const res = await fetch(
+                `https://writa.herokuapp.com/api/v1/headline?page=1&size=${limitsize}`);
+            const data = await res.json();
+            const total = res.headers.get('Content-Range');
+            setpageCount(Math.ceil(total/limitsize));
+            // console.log(total/30);
+            setItems(data);
+        };
+        getHeadlines();
+
+    }, [page]);
+
+    // console.log(items);
+
+    const fetchHeadlines = async (currentPage) => {
+        const res = await fetch(
+            `https://writa.herokuapp.com/api/v1/headline?page=${currentPage}&size=${limitsize}`);
+        const data = await res.json();
+        return data;
+    }
+
+
+    const handlePageClick = async (data) =>{
+        // console.log(data.selected);
+        let currentPage = data.selected + 1
+        const headlinesFormServer = await fetchHeadlines(currentPage);
+        setItems(headlinesFormServer);
+        window.scroll(0,0);
+    };
 
     return (
         <Container className={classes.container}>
@@ -91,9 +137,16 @@ function HeadlineFeed() {
             </Box>
             <Grid container spacing={2} className={classes.stackrow}>
 
+
+                {/*<Stack spacing={2}>*/}
+
+                {/*</Stack>*/}
+
+
+
                 {/*{ filteredData.length === 0 ? <div>No result found</div> :*/}
                 {
-                    headlines.map(item =>
+                    items.map(item =>
                         (
                             <Grid item xs={6} md={3} key={item.id}>
 
@@ -112,7 +165,34 @@ function HeadlineFeed() {
                             </Grid>
                         ))
                 }
+
+                <Grid container>
+                    <nav aria-label="Page navigation example">
+                        <ReactPaginate
+                            previousLabel={'previous'}
+                            nextLabel={'next'}
+                            breakLabel={'-'}
+                            pageCount={pageCount}
+                            marginPagesDisplayed={2}
+                            pageRangeDisplayed={1}
+                            onPageChange={handlePageClick}
+                            containerClassName={"pagination justify-content-center"}
+                            pageClassName={'page-item'}
+                            pageLinkClassName={'page-link'}
+                            previousClassName={'page-item'}
+                            previousLinkClassName={'page-link'}
+                            nextClassName={'page-item'}
+                            nextLinkClassName={'page-link'}
+                            breakClassName={'page-item'}
+                            breakLinkClassName={'page-link'}
+                            activeClassName={'active'}
+                        />
+                    </nav>
+                </Grid>
+
             </Grid>
+
+
         </Container>
 
     );

@@ -1,5 +1,5 @@
 import {
-    Button,
+    Button, ClickAwayListener,
     Container,
     Fab,
     List,
@@ -42,7 +42,17 @@ const useStyles = makeStyles((theme) => ({
 function Add() {
     const classes = useStyles();
     const [open, setOpen] = useState(false)
+
+    const handleClick = () => {
+        setOpen((prev) => !prev);
+    };
+
+    const handleClickAway = () => {
+        setOpen(false);
+    };
+
     return (
+        <ClickAwayListener onClickAway={handleClickAway}>
         <>
             <Tooltip title="Add" aria-label="add" onClick={()=> setOpen(true)}>
                 <Fab color="primary" className={classes.fab}>
@@ -85,6 +95,7 @@ function Add() {
                 </Container>
             </Modal>
         </>
+        </ClickAwayListener>
     );
 }
 

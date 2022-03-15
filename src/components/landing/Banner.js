@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(15),
         [theme.breakpoints.down("sm")]:{
             marginBottom: theme.spacing(0),
+            backgroundColor: "#cbf1e7",
             fontSize: "17px",
             width: "100%",
             // height: "45px",
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         marginTop: theme.spacing(29),
         [theme.breakpoints.down("sm")]:{
-            backgroundColor: "white",
+            backgroundColor: "#cbf1e7",
             color: "#555",
             // border: "1px solid #ece7e7",
             padding: "15px",

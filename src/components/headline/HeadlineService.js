@@ -4,6 +4,8 @@ const HEADLINE_BASE_REST_API_URL = 'http://localhost:8082/api/v1/headline/save';
 const HEADLINE_GET_REST_API_URL = 'https://writa.herokuapp.com/api/v1/headline';
 // const HEADLINE_GET_REST_API_URL = 'http://localhost:8082/api/v1/headline';
 
+// const HEADLINE_GET_REST_API_PAGE_URL = `http://localhost:8082/api/v1/headline?page=1&size=${limitsize}`;
+
 class HeadlineService{
 
     getAllHeadlines(){

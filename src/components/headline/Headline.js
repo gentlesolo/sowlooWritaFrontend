@@ -35,9 +35,9 @@ const Headline = () =>{
                     </Alert>
                     <HeadlineFeed/>
                 </Grid>
-                <Grid item sm={3} xs={0} className={classes.right}>
-                    {/*<Rightbar/>*/}
-                </Grid>
+                {/*<Grid item sm={3} xs={0} className={classes.right}>*/}
+                {/*    /!*<Rightbar/>*!/*/}
+                {/*</Grid>*/}
             </Grid>
 
             {/*<Add/>*/}

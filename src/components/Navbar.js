@@ -40,7 +40,8 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: theme.spacing(12),
         [theme.breakpoints.down("sm")]:{
             //display: (props)=> (props.open ? "flex" : "none"),
-            width: "52%",
+            width: "55%",
+            // justifyContent: "center",
         },
     },
     search: {
@@ -83,8 +84,8 @@ const useStyles = makeStyles((theme) => ({
         '&.active': {
             textDecoration: "none",
             // backgroundColor: "#e5e5e5",
-            backgroundColor: "#ffdfff",
-            color: "black"
+            backgroundColor: "#cbf1e7",
+            color: "#160647"
         }
     },
     menuicon: {
@@ -113,6 +114,7 @@ const useStyles = makeStyles((theme) => ({
     icons: {
         display: "none",
         alignItems: "center",
+        color: "#160647 !important",
         // [theme.breakpoints.down("sm")]:{
         //     display: (props)=> (props.open ? "none" : "flex"),
         // },
@@ -150,12 +152,12 @@ const Navbar = () => {
                     <IconButton className={classes.logoSmall}
                                 size="large"
                                 edge="start"
-                                color="black"
+                                color="#160647"
                                 aria-label="menu"
                                 sx={{ mr: 2 }}
                                 onClick={() => setOpenDrawer(true)}
                     >
-                        <MenuIcon />
+                        <MenuIcon color="#160647" />
                     </IconButton>
 
                     <Link href="/">
