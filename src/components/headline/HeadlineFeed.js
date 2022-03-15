@@ -79,7 +79,7 @@ function HeadlineFeed() {
     useEffect(() => {
         const getHeadlines = async () =>{
             const res = await fetch(
-                `https://writa.herokuapp.com/api/v1/headline?page=1&size=${limitsize}`);
+                `https://writabackend.herokuapp.com/api/v1/headline?page=1&size=${limitsize}`);
             const data = await res.json();
             const total = res.headers.get('Content-Range');
             setpageCount(Math.ceil(total/limitsize));
@@ -94,7 +94,7 @@ function HeadlineFeed() {
 
     const fetchHeadlines = async (currentPage) => {
         const res = await fetch(
-            `https://writa.herokuapp.com/api/v1/headline?page=${currentPage}&size=${limitsize}`);
+            `https://writabackend.herokuapp.com/api/v1/headline?page=${currentPage}&size=${limitsize}`);
         const data = await res.json();
         return data;
     }
