@@ -46,6 +46,9 @@ body {
   background-color: #00f5d4;
   border-color: #00f5d4;
 }
+.whatsapp_widget_wrapper{
+  bottom: 105px !important;
+}
 
 @keyframes App-logo-spin {
   from {
