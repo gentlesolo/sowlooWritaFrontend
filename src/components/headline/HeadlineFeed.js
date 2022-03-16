@@ -16,7 +16,32 @@ import HeadlineService from "./HeadlineService";
 import * as React from "react";
 import {Pagination, Stack} from "@mui/material";
 import ReactPaginate from "react-paginate";
+// import { useAnalytics } from 'use-analytics'
+// import * as analytics from "analytics";
+import googleAnalytics, {track} from "@analytics/google-analytics";
+import Analytics from "analytics";
+// import analytics from "analytics";
 // import {Home} from "@mui/icons-material";
+
+const myPlugin = {
+    name: 'my-custom-plugin',
+    page: ({ payload }) => {
+        console.log('page view fired', payload)
+    },
+    track: ({payload}) => {
+        console.log('track event payload', payload)
+    }
+}
+
+const analytics = Analytics({
+    app: 'writa',
+    plugins: [
+        myPlugin,
+        googleAnalytics({
+            trackingId: 'UA-222078699-1'
+        })
+    ]
+})
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -69,6 +94,7 @@ function HeadlineFeed() {
     //     setFilteredData(headlines.filter((headline) => headline.industry?.toLowerCase().includes(search?.toLowerCase()))
     //     )
     // }, [search, headlines]);
+    //const { track, identify } = analytics
 
     const [items, setItems] = useState([]);
 
@@ -107,6 +133,10 @@ function HeadlineFeed() {
         setItems(headlinesFormServer);
         window.scroll(0,0);
     };
+
+    function handleFeedClick() {
+        console.log('item clicked');
+    }
 
     return (
         <Container className={classes.container}>
@@ -153,7 +183,18 @@ function HeadlineFeed() {
                                 <Card className={classes.card}>
                                     <CardActionArea>
                                         <CardContent className={classes.post}>
-                                            <Typography suppressContentEditableWarning={true} contentEditable="true" variant="body2" className={classes.post}>
+                                            <Typography
+                                                onClick={() => analytics.track('Headline Clicked',
+                                                    { headline: item.name },
+                                                    {
+                                                        plugins: {
+                                                            // disable this specific track call all plugins except customerio
+                                                            all: true,
+                                                            // customerio: true
+                                                        }
+                                                    })}
+                                                suppressContentEditableWarning={true}
+                                                contentEditable="true" variant="body2" className={classes.post}>
                                                 {item.name}
                                             </Typography>
                                         </CardContent>

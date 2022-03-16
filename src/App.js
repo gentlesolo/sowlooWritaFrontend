@@ -19,6 +19,7 @@ import Blogpost from "./components/blogpost/Blogpost";
 import { useAnalytics } from "use-analytics";
 // import {Link} from "@material-ui/core";
 import LoginNew from "./components/user-registration/LoginNew";
+import WhatsappChat from "./components/WhatsappChat";
 
 
 
@@ -48,7 +49,8 @@ function App() {
               <Route path="/add-headline" element={<AddHeadlineService/>}/>
           </Routes>
 
-          <Add/>
+          {/*<Add/>*/}
+          <WhatsappChat/>
           {/*<Footer/>*/}
 
       </div>

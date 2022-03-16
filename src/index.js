@@ -16,9 +16,9 @@ const myPlugin = {
     page: ({ payload }) => {
         console.log('page view fired', payload)
     },
-    // track: ({payload}) => {
-    //     console.log('track event payload', payload)
-    // }
+    track: ({payload}) => {
+        console.log('track event payload', payload)
+    }
 }
 
 const analytics = Analytics({

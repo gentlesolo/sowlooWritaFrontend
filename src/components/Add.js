@@ -12,6 +12,7 @@ import EventIcon from '@mui/icons-material/Event';
 import {Add as AddIcon, CampaignSharp} from "@mui/icons-material"
 import {useState} from "react";
 import {ListItemButton} from "@mui/material";
+import WhatsappChat from "./WhatsappChat";
 
 const useStyles = makeStyles((theme) => ({
     fab: {
